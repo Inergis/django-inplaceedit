@@ -14,10 +14,10 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this programe.  If not, see <http://www.gnu.org/licenses/>.
 
-from django.urls import path, include
-from . import views
+from django.urls import re_path
+from .views import save_ajax, get_field
 
 urlpatterns = [
-    path('save/', views.save_ajax, name='inplace_save'),
-    path('get_field/', views.get_field, name='inplace_get_field')
+    re_path('save/', save_ajax, name='inplace_save'),
+    re_path('get_field/', get_field, name='inplace_get_field')
 ]
